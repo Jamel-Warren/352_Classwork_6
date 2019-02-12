@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.OleDb;
 
 namespace Classwork_6
 {
@@ -23,6 +24,21 @@ namespace Classwork_6
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Asset_Button_Click(object sender, RoutedEventArgs e)
+        {
+            OleDbConnection cn;
+            cn = new OleDbConnection("\\labcluster.utm.edu\\home$\\jamnwarr\\My Documents\\Database.accdb");
+            string query = "select* from Assets";
+            OleDbCommand cmd = new OleDbCommand(query, cn);
+            cn.Open();
+            OleDbDataReader read = cmd.ExecuteReader();
+            string data = "";
+            while (read.Read())
+            {
+                data += read[0].ToString() + "\n";
+            }
         }
     }
 }
