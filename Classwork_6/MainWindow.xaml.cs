@@ -29,7 +29,7 @@ namespace Classwork_6
         private void Asset_Button_Click(object sender, RoutedEventArgs e)
         {
             OleDbConnection cn;
-            cn = new OleDbConnection("\\labcluster.utm.edu\\home$\\jamnwarr\\My Documents\\Database.accdb");
+            cn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\Database.accdb");
             string query = "select* from Assets";
             OleDbCommand cmd = new OleDbCommand(query, cn);
             cn.Open();
@@ -37,8 +37,31 @@ namespace Classwork_6
             string data = "";
             while (read.Read())
             {
-                data += read[0].ToString() + "\n";
+                data += read[0].ToString() + ", " + read[1].ToString() + ", " + read[2].ToString() + "\n";
             }
+            employee_text.Text = data;
+        }
+
+        private void Employee_button_Click(object sender, RoutedEventArgs e)
+        {
+            OleDbConnection cn;
+            cn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\Database.accdb");
+            string query = "select* from Employees";
+            OleDbCommand cmd = new OleDbCommand(query, cn);
+            cn.Open();
+            OleDbDataReader read = cmd.ExecuteReader();
+            string data = "";
+            while (read.Read())
+            {
+                data += read[0].ToString() + ", " +  read[1].ToString() + ", " + read[2].ToString() + "\n";
+            }
+            employee_Text.Text = data;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            employee_Text.Text = String.Empty;
+            employee_text.Text = String.Empty;
         }
     }
 }

@@ -7,10 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="516,45,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="95" Width="207"/>
-        <Button x:Name="Asset_Button" Content="See Assets" HorizontalAlignment="Left" Margin="0,185,0,0" VerticalAlignment="Top" Width="218" Height="54" Click="Asset_Button_Click"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="0,85,0,0" VerticalAlignment="Top" Width="218" Height="55"/>
-        <TextBlock x:Name="Asset_Text" HorizontalAlignment="Left" Margin="516,172,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="92" Width="207"/>
+        <TextBlock x:Name="employee_text" HorizontalAlignment="Left" Margin="516,45,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="95" Width="207"/>
+        <Button x:Name="Asset_Button" Content="See Assets" HorizontalAlignment="Left" Margin="0,45,0,0" VerticalAlignment="Top" Width="218" Height="54" Click="Asset_Button_Click"/>
+        <Button x:Name="employee_button" Content="See employees" HorizontalAlignment="Left" Margin="0,172,0,0" VerticalAlignment="Top" Width="218" Height="55" Click="Employee_button_Click"/>
+        <TextBlock x:Name="employee_Text" HorizontalAlignment="Left" Margin="516,172,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="92" Width="207"/>
+        <Button Content="CLEAR" HorizontalAlignment="Left" Margin="10,309,0,0" VerticalAlignment="Top" Width="208" Height="47" Click="Button_Click"/>
 
     </Grid>
 </Window>
